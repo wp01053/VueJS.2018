@@ -1,7 +1,10 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 
 <body>
@@ -9,30 +12,62 @@
         This is a test.
         <!--Vue.js domain-->
         <br> {{message + '1234' }}
-        <br> <span v-bind:title = "date"> 마우스를 가까이 가져오세요.</span>
+        <br>
+        <span v-bind:title="date"> 마우스를 가까이 가져오세요.</span>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <span  v-if = "seen">볼 수 있음.</span>
-    <span  v-else>볼 수 없음.</span>
-    <br>
-    내가 공부하고 싶은 언어
-    <ul>
-        <li v-for = "todo in todos">{{todo.text}}</li>
-    </ul>
-</div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <span v-if="seen">볼 수 있음.</span>
+        <span v-else>볼 수 없음.</span>
+        <br> 내가 공부하고 싶은 언어
+        <ul>
+            <li v-for="todo in todos">{{todo.text}}</li>
+        </ul>
 
+        <div class="columns">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+            <div class="column">4</div>
+            <div class="column">5</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-primary">제목</h1>
+            <h2 class="subtitle">중요한 내용</h2>
+        </div>
+        <a class="button is-link">button</a>
+
+        <span class="tag is-primary">트위터
+            <button class="delete"></button>
+        </span>
+
+        <article class="message">
+            <div class="message-header">
+                <p>Hello Message</p>
+                <button class="delete is-primary"></button>
+            </div>
+        </article>
+
+        <div class="message-body">
+            <span>
+                This is a test of emssage in Bulma.</span>
+        </div>
+
+    </section>
     <script>
         const myApp = new Vue({
-            el: '#app',  
+            el: '#app',
             data: {
                 message: 'Hello Vue!',
-                date : '오늘 날짜: ' + new Date().toLocaleString() ,
-                seen : true,
-                todos : [
-                    {text : 'JavaScript'},
-                    {text : 'Node.js'},
-                    {text : 'Vue.js'},
-                    {text : 'Nuxt.js'}
+                date: '오늘 날짜: ' + new Date().toLocaleString(),
+                seen: true,
+                todos: [
+                    { text: 'JavaScript' },
+                    { text: 'Node.js' },
+                    { text: 'Vue.js' },
+                    { text: 'Nuxt.js' }
                 ]
             }
         });
